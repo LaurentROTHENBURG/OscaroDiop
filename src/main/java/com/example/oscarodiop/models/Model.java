@@ -14,7 +14,7 @@ public class Model {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "model_id_seq")
     @SequenceGenerator(name = "model_id_seq", allocationSize = 1)
 
-    private int id;
+    private Long id;
     String name;
     int year;
     LocalDate addDate;
@@ -24,8 +24,8 @@ public class Model {
     @ManyToOne
     private Brand brand;
 
-    public int getId() {
-        return id;
+    public Long getId() {
+        return  id;
     }
 
     public String getName() {
