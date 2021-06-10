@@ -8,8 +8,8 @@ import java.util.List;
 @Entity
 public class Brand {
     @Id
-    //@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "brand_id_seq")
-    //@SequenceGenerator(name = "brand_id_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "brand_id_seq")
+    @SequenceGenerator(name = "brand_id_seq", allocationSize = 1)
 
     private Long id;
     @Column(length = 255)
