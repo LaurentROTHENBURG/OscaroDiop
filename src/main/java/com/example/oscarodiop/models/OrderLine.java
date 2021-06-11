@@ -15,6 +15,9 @@ public class OrderLine {
     @ManyToOne
     private Order order;
 
+    @ManyToOne
+    private Part part;
+
     public OrderLine() {
     }
 

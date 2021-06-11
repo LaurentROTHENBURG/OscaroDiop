@@ -20,9 +20,13 @@ public class Model {
     LocalDate addDate;
     boolean disable;
 
-   // @JsonIgnore
+    //@JsonIgnore
     @ManyToOne
     private Brand brand;
+
+    public Model(Brand brand) {
+        this.brand = brand;
+    }
 
     public Long getId() {
         return  id;
@@ -45,10 +49,6 @@ public class Model {
     }
 
     public Model() {
-    }
-
-    public Brand getBrand() {
-        return brand;
     }
 
 
