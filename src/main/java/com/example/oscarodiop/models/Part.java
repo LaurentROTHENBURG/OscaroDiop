@@ -16,12 +16,14 @@ public class Part {
     @ManyToOne
     private Model model;
 
-    String reference;
-    Long serialNumber;
-    String description;
-    LocalDate addDate;
-    Long stock;
-    Double publicPrice;
-    Double minimumPrice;
+    private String reference;
+    private Long serialNumber;
+    private String description;
+    private LocalDate addDate;
+    private Long stock;
+    private Double publicPrice;
+    private Double minimumPrice;
 
+    public Part() {
+    }
 }//end

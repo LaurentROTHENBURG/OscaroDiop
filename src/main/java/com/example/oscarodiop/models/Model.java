@@ -49,8 +49,7 @@ public class Model {
 
     public Brand getBrand() {
         return brand;
-
-
     }
+
 
 }//end
