@@ -1,6 +1,7 @@
 package com.example.oscarodiop.models;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 public class Invoice {
@@ -10,6 +11,8 @@ public class Invoice {
     private Long id;
 
     private String file;
+
+    private LocalDate editionDate;
 
     @OneToOne
     private Customer customer;

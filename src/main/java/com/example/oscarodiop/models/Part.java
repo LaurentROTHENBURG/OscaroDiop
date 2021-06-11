@@ -2,6 +2,7 @@ package com.example.oscarodiop.models;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 public class Part {
@@ -11,10 +12,13 @@ public class Part {
     private Long id;
 
     @ManyToOne
-    private PartType parttype;
+    private PartType partType;
 
-    @ManyToOne
+    @OneToOne
     private Model model;
+
+    @OneToMany(mappedBy = "part")
+    private List<OrderLine> orderLineList;
 
     private String reference;
     private Long serialNumber;
