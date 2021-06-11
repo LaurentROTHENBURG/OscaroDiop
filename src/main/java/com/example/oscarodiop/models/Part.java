@@ -21,13 +21,57 @@ public class Part {
     private List<OrderLine> orderLineList;
 
     private String reference;
-    private Long serialNumber;
+    private String serialNumber;
     private String description;
     private LocalDate addDate;
-    private Long stock;
+    private int stock;
     private Double publicPrice;
     private Double minimumPrice;
 
     public Part() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public PartType getPartType() {
+        return partType;
+    }
+
+    public Model getModel() {
+        return model;
+    }
+
+    public List<OrderLine> getOrderLineList() {
+        return orderLineList;
+    }
+
+    public String getReference() {
+        return reference;
+    }
+
+    public String getSerialNumber() {
+        return serialNumber;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public LocalDate getAddDate() {
+        return addDate;
+    }
+
+    public int getStock() {
+        return stock;
+    }
+
+    public Double getPublicPrice() {
+        return publicPrice;
+    }
+
+    public Double getMinimumPrice() {
+        return minimumPrice;
     }
 }//end
