@@ -17,8 +17,8 @@ public class Brand {
     private LocalDate addDate;
     private boolean disable;
 
-    //@OneToMany(mappedBy = "model")
-    //private List<Model> model;
+    @OneToMany(mappedBy = "brand")
+    private List<Model> model;
 
     public Brand() {
     }

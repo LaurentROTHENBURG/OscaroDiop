@@ -1,6 +1,7 @@
 package com.example.oscarodiop.models;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class PartGroup {
@@ -10,6 +11,9 @@ public class PartGroup {
     private Long id;
 
     private String name;
+
+    @OneToMany(mappedBy = "partGroup")
+    private List<PartType> partTypeList;
 
     public PartGroup() {
     }
