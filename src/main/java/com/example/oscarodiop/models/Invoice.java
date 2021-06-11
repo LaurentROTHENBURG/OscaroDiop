@@ -14,5 +14,6 @@ public class Invoice {
     @OneToOne
     private Customer customer;
 
-
+    public Invoice() {
+    }
 }
