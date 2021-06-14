@@ -1,4 +1,4 @@
-package com.example.oscarodiop.controller;
+package com.example.oscarodiop.controllers;
 
 import com.example.oscarodiop.models.PartType;
 import com.example.oscarodiop.repository.PartTypeRepository;
