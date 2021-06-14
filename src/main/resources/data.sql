@@ -70,9 +70,9 @@ insert into part_type (id, name, part_group_id) VALUES
 (nextval('part_type_id_seq'), 'hayon', 8) ;                                                 ;
 
 insert into brand (id, add_date, disable,name ) VALUES (nextval('brand_id_seq'), now(), false,'Acura'),
-                                                  (nextval('brand_id_seq'),now(), false,'Seat'),
+                                                       (nextval('brand_id_seq'),now(), false,'Seat'),
                                                        (nextval('brand_id_seq'),now(), false,'Alfa Romeo'),
-    (nextval('brand_id_seq'),now(), false,'Audi'),
+                                                       (nextval('brand_id_seq'),now(), false,'Audi'),
                                                        (nextval('brand_id_seq'),now(), false,'BMW'),
                                                        (nextval('brand_id_seq'),now(), false,'Chevrolet'),
                                                        (nextval('brand_id_seq'),now(), false,'Tesla'),
@@ -90,7 +90,7 @@ insert into brand (id, add_date, disable,name ) VALUES (nextval('brand_id_seq'),
                                                        (nextval('brand_id_seq'),now(), false,'Suzuki');
 
 insert into model (id, add_date, disable,name,year,brand_id) VALUES (nextval('model_id_seq'), now(), false,'Legend',1987,1),
-    (nextval('model_id_seq'), now(), false,'Legend',2000,1),
+                                                                    (nextval('model_id_seq'), now(), false,'Legend',2000,1),
                                                                     (nextval('model_id_seq'), now(), false,'X5',2006,5),
                                                                     (nextval('model_id_seq'), now(), false,'X3',2007,5),
                                                                     (nextval('model_id_seq'), now(), false,'Fiesta',2011,13),
@@ -103,6 +103,7 @@ insert into model (id, add_date, disable,name,year,brand_id) VALUES (nextval('mo
                                                                     (nextval('model_id_seq'), now(), false,'ROGUE',2010,18),
                                                                     (nextval('model_id_seq'), now(), false,'Leon',2010,2),
                                                                     (nextval('model_id_seq'), now(), false,'Leon',2015,2);
+<<<<<<< HEAD
 insert into part (id, add_date,description, minimum_price,public_price,reference,serial_number,stock,model_id,part_type_id,disable) values
                                                      (nextval('part_id_seq'),now(),'feux Avant',50000,55000,'je ne sais pas','377T866ES',5,1,1,false),
                                                      (nextval('part_id_seq'),now(),'alternateurpartie',70000,75000,'je ne sais pas','278T866ES',3,2,2,false),
@@ -110,6 +111,15 @@ insert into part (id, add_date,description, minimum_price,public_price,reference
                                                      (nextval('part_id_seq'),now(),'PORTE AVANT FOCUS 2012',60000,80000,'','677T867ES',8,7,52,false),
                                                      (nextval('part_id_seq'),now(),'BRAS FORD FOCUS',60000,85000,'','477T867ESLa',1,7,30,false)  ,
                                                      (nextval('part_id_seq'),now(),'COMPRESSEUR',80000,90000,'','',1,12,33,false) ;
+=======
+insert into part (id, add_date,description, minimum_price,public_price,reference,serial_number,stock,model_id,part_type_id) values
+(nextval('part_id_seq'),now(),'feux Avant',50000,55000,'je ne sais pas','377T866ES',5,1,1),
+(nextval('part_id_seq'),now(),'alternateurpartie',70000,75000,'je ne sais pas','278T866ES',3,2,2),
+(nextval('part_id_seq'),now(),'MOTEUR + TRANSMISSION',800000,1000000,'','478T867ES',2,10,11),
+(nextval('part_id_seq'),now(),'PORTE AVANT FOCUS 2012',60000,80000,'','677T867ES',8,7,52),
+(nextval('part_id_seq'),now(),'BRAS FORD FOCUS',60000,85000,'','477T867ESLa',1,7,30)  ,
+(nextval('part_id_seq'),now(),'COMPRESSEUR',80000,90000,'','',1,12,33) ;
+>>>>>>> thio
 
 
 INSERT INTO customer (id,first_name,last_name,mail,password,phone_number,user_name) values
@@ -123,6 +133,10 @@ INSERT INTO ORDERS (id,order_date, customer_id) values
 (nextval('order_id_seq'),now(),2),
 (nextval('order_id_seq'),now(),3);
 
+INSERT INTO order_line (id,order_price, quantity,order_id,part_id) values
+(nextval('orderline_id_seq'),50000,1,1,1),
+(nextval('orderline_id_seq'),60000,1,2,6),
+(nextval('orderline_id_seq'),80000,1,3,5);
 
 
 
