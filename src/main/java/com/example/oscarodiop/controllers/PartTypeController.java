@@ -1,7 +1,7 @@
 package com.example.oscarodiop.controllers;
 
 import com.example.oscarodiop.models.PartType;
-import com.example.oscarodiop.repository.PartTypeRepository;
+import com.example.oscarodiop.repositories.PartTypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

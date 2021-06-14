@@ -1,4 +1,4 @@
-package com.example.oscarodiop.repository;
+package com.example.oscarodiop.repositories;
 
 import com.example.oscarodiop.models.PartType;
 import org.springframework.data.jpa.repository.JpaRepository;
