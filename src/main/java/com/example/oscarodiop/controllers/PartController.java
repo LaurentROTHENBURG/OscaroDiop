@@ -18,6 +18,7 @@ public class PartController {
 
     @GetMapping
     public List<Part> getAllParts(){
-        return partRepository.findAll();
-    }
+        return partRepository.findAll(); }
+
+
 }
