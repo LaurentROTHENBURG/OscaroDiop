@@ -53,5 +53,6 @@ public class PartController {
     @DeleteMapping(value = "/delete/{id}")
     public void deletePart(@PathVariable Long id){
         partRepository.deleteById(id);
+
     }
 }
