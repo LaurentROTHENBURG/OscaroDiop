@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
+import javax.websocket.server.PathParam;
 import java.util.List;
 
 @RestController
@@ -22,9 +23,19 @@ public class PartController {
         return partRepository.findAll();
     }
 
-    @GetMapping(value = "/getPartsByBrand")
-    public List<Part> getPartsByBrand(@RequestParam("idBrand") Long idBrand){
-        return partRepository.findAllByModel_Id(idBrand);
+    @GetMapping(value = "/getPartsByModel/{idModel}")
+    public List<Part> getPartsByModel(@PathParam("idModel") Long idModel){
+        return partRepository.findAllByModel_Id(idModel);
+    }
+
+    @GetMapping(value = "/getPartsByModelByPartType/{idModel}/{idPartType}")
+    public List<Part> getPartsByModelByPartType(@PathVariable("idModel") Long idModel, @PathVariable("idPartType") Long idPartType){
+        return partRepository.findAllByModel_IdAndPartType(idModel, idPartType);
+    }
+
+    @GetMapping(value = "/getPartsByModelByPartTypeByPartGroup/{idModel}/{idPartType}/{idPartGroup}")
+    public List<Part> getPartsByModelByPartTypeAndPartGroup(@PathVariable("idModel") Long idModel, @PathVariable("idPartType") Long idPartType, @PathVariable("idPartGroup") Long idPartGroup){
+        return partRepository.findAllByModel_IdAndPartTypeAndPartGroup(idModel, idPartType,idPartGroup );
     }
 
     @GetMapping(value = "/{id}")

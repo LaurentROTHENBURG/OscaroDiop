@@ -17,4 +17,15 @@ public interface PartRepository extends JpaRepository<Part, Long> {
     int disablePart(@Param("id") Long id);
 
     List<Part> findAllByModel_Id(@Param("id") Long idBrand);
+
+    List<Part> findAllByModel_IdAndPartType(@Param("id") Long idBrand, @Param("idPartType") Long idPartType);
+
+    @Query(value = "select p.*, pg.name, pt.name, m.name, b.name from part p\n" +
+            "inner join model m on m.id = p.model_id\n" +
+            "inner join brand b on b.id = m.brand_id\n" +
+            "inner join part_type pt on pt.id = p.part_type_id\n" +
+            "inner join part_group pg on pg.id = pt.part_group_id\n" +
+            "where p.disable = false AND p.model_id = :id AND \n" +
+            "p.part_type_id = :idPartType AND pg.id = :idPartGroup", nativeQuery = true)
+    List<Part> findAllByModel_IdAndPartTypeAndPartGroup(@Param("id") Long idBrand, @Param("idPartType") Long idPartType, @Param("idPartGroup") Long idPartGroup);
 }
