@@ -103,7 +103,7 @@ insert into model (id, add_date, disable,name,year,brand_id) VALUES (nextval('mo
                                                                     (nextval('model_id_seq'), now(), false,'ROGUE',2010,18),
                                                                     (nextval('model_id_seq'), now(), false,'Leon',2010,2),
                                                                     (nextval('model_id_seq'), now(), false,'Leon',2015,2);
-<<<<<<< HEAD
+
 insert into part (id, add_date,description, minimum_price,public_price,reference,serial_number,stock,model_id,part_type_id,disable) values
                                                      (nextval('part_id_seq'),now(),'feux Avant',50000,55000,'je ne sais pas','377T866ES',5,1,1,false),
                                                      (nextval('part_id_seq'),now(),'alternateurpartie',70000,75000,'je ne sais pas','278T866ES',3,2,2,false),
@@ -111,7 +111,7 @@ insert into part (id, add_date,description, minimum_price,public_price,reference
                                                      (nextval('part_id_seq'),now(),'PORTE AVANT FOCUS 2012',60000,80000,'','677T867ES',8,7,52,false),
                                                      (nextval('part_id_seq'),now(),'BRAS FORD FOCUS',60000,85000,'','477T867ESLa',1,7,30,false)  ,
                                                      (nextval('part_id_seq'),now(),'COMPRESSEUR',80000,90000,'','',1,12,33,false) ;
-=======
+
 insert into part (id, add_date,description, minimum_price,public_price,reference,serial_number,stock,model_id,part_type_id) values
 (nextval('part_id_seq'),now(),'feux Avant',50000,55000,'je ne sais pas','377T866ES',5,1,1),
 (nextval('part_id_seq'),now(),'alternateurpartie',70000,75000,'je ne sais pas','278T866ES',3,2,2),
@@ -119,7 +119,6 @@ insert into part (id, add_date,description, minimum_price,public_price,reference
 (nextval('part_id_seq'),now(),'PORTE AVANT FOCUS 2012',60000,80000,'','677T867ES',8,7,52),
 (nextval('part_id_seq'),now(),'BRAS FORD FOCUS',60000,85000,'','477T867ESLa',1,7,30)  ,
 (nextval('part_id_seq'),now(),'COMPRESSEUR',80000,90000,'','',1,12,33) ;
->>>>>>> thio
 
 
 INSERT INTO customer (id,first_name,last_name,mail,password,phone_number,user_name) values
