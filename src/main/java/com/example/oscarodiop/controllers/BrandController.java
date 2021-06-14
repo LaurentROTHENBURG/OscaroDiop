@@ -4,6 +4,8 @@ import com.example.oscarodiop.models.Brand;
 import com.example.oscarodiop.models.PartType;
 import com.example.oscarodiop.repositories.BrandRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.transaction.Transactional;
@@ -43,12 +45,16 @@ public class BrandController {
         return brandRepository.save(brandToCreate).getId();
     }
 
+//    @Transactional
+//    @PutMapping("/disable/{id}")
+//    public void disableBrand(@PathVariable Long id) {
+//        brandRepository.disableBrand(id);
+//    }
+
     @Transactional
-    @PutMapping("/{id}")
-    public void disableBrand(@PathVariable Long id) {
-        brandRepository.disableBrand(id);
+    @PutMapping(value = "/disable/{id}")
+    public ResponseEntity disableBrand(@PathVariable("id") Long id){
+        return new ResponseEntity((brandRepository.disableBrand(id)) !=0 ? HttpStatus.OK : HttpStatus.NOT_FOUND);
     }
-
-
 
 }//end
