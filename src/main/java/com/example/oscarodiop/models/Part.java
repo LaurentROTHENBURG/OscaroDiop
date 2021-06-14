@@ -32,6 +32,8 @@ public class Part {
     private int stock;
     private Double publicPrice;
     private Double minimumPrice;
+    @Column(name = "disable", columnDefinition = "boolean default false")
+    private boolean disable;
 
     public Part() {
     }
@@ -78,5 +80,9 @@ public class Part {
 
     public Double getMinimumPrice() {
         return minimumPrice;
+    }
+
+    public boolean isDisable() {
+        return disable;
     }
 }//end
