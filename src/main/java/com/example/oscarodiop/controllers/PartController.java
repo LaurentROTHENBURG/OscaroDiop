@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/admin/parts")
+@RequestMapping("admin/parts")
 public class PartController {
     @Autowired
     private PartRepository partRepository;

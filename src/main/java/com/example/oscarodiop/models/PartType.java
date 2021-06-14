@@ -1,5 +1,7 @@
 package com.example.oscarodiop.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -12,11 +14,12 @@ public class PartType {
 
     String name;
 
+    @JsonIgnore
     @ManyToOne
     private PartGroup partGroup;
 
-    @OneToMany(mappedBy = "partType")
-    private List<Part> partList;
+    //@OneToMany(mappedBy = "partType")
+    //private List<Part> partList;
 
     public PartType() {
     }

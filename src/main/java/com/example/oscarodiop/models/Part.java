@@ -1,5 +1,7 @@
 package com.example.oscarodiop.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
@@ -11,12 +13,15 @@ public class Part {
     @SequenceGenerator(name = "part_id_seq", allocationSize = 1)
     private Long id;
 
+    @JsonIgnore
     @ManyToOne
     private PartType partType;
 
+    @JsonIgnore
     @OneToOne
     private Model model;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "part")
     private List<OrderLine> orderLineList;
 
