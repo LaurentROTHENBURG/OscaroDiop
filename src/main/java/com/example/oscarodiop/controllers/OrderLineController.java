@@ -15,12 +15,12 @@ public class OrderLineController {
     private OrderLineRepository orderLineRepository;
 
     @GetMapping("/{orderId}")
-    public List<OrderLine> getOrderLinesById(@PathVariable Long orderId){
+    public List<OrderLine> getOrderLinesByOrderId(@PathVariable Long orderId){
         return orderLineRepository.findAllByOrder_Id(orderId);
     }
 
     @PutMapping ("/update")
-    public OrderLine updateOrderById(@RequestBody OrderLine orderLine){
+    public OrderLine updateOrderLineById(@RequestBody OrderLine orderLine){
         return orderLineRepository.save(orderLine);
     }
 
