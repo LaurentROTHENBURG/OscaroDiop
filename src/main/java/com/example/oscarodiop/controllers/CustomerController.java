@@ -45,16 +45,10 @@ public class CustomerController {
         return customerRepository.save(customerToCreate).getId();
     }
 
-//    @Transactional
-//    @PutMapping(value = "/custommer/update/{id}")
-//    public ResponseEntity updateCustomer(
-//            @PathVariable("firstName") String firstName,
-//            @PathVariable("lastName") String lastName,
-//            @PathVariable("mail") String mail,
-//            @PathVariable("phoneNumber") String phoneNumber,
-//            @PathVariable("userName") String userName
-//            ) {
-//        return new ResponseEntity((customerRepository.updateCustomer(firstName)) != 0 ? HttpStatus.OK : HttpStatus.NOT_FOUND);
-//    }
+    @Transactional
+    @PutMapping(value = "/custommer/update")
+    public Customer updateCustomer(@RequestBody Customer customer) {
+        return customerRepository.save(customer);
+    }
 
 }//end
