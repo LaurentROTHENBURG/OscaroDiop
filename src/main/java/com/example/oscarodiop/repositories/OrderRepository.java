@@ -1,6 +1,7 @@
 package com.example.oscarodiop.repositories;
 
 import com.example.oscarodiop.models.Order;
+import com.example.oscarodiop.models.OrderLine;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -15,5 +16,8 @@ public interface OrderRepository extends JpaRepository<Order, Long> {
 
 
     @Modifying
-    List<Order> getOrdersByCustomer_Id(Long id);
+   // List<Order> findOrdersByCustomer_Id(Long id);
+    @Query("select ol from Order o join OrderLine ol on o.id = ol.order.id where o.id = :id")
+
+    List<OrderLine> findByCustomer(Long id);
 }

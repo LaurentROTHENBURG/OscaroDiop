@@ -34,18 +34,18 @@ public class OrderController {
 
 
 
-    //update OrderLine
+
     @Transactional
     @DeleteMapping("{id}")
     public void deleteOrder(@PathVariable Long id){
         orderLineRepository.deleteAllByOrder_Id(id);
         orderRepository.deleteOrderById(id);
     }
-/*
+
     @GetMapping("/clientId")
-    public List<Order> GetIOrderByClient(@PathVariable Long clientId){
-       return orderRepository.getOrdersByCustomer_Id(clientId);
+    public List<OrderLine> GetIOrderByClient(@RequestParam Long clientId){
+        return orderRepository.findByCustomer(clientId);
     }
-    */
+
 
 }
