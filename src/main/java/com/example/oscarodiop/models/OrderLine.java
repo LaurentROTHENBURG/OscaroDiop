@@ -1,5 +1,7 @@
 package com.example.oscarodiop.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
@@ -12,6 +14,7 @@ public class OrderLine {
     private int quantity;
     private double orderPrice;
 
+    //@JsonIgnore
     @ManyToOne
     private Order order;
 
@@ -35,5 +38,9 @@ public class OrderLine {
 
     public Order getOrder() {
         return order;
+    }
+
+    public Part getPart() {
+        return part;
     }
 }
