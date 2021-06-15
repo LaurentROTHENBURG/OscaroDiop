@@ -134,6 +134,7 @@ INSERT INTO ORDERS (id,order_date, customer_id) values
 
 INSERT INTO order_line (id,order_price, quantity,order_id,part_id) values
 (nextval('orderline_id_seq'),50000,1,1,1),
+(nextval('orderline_id_seq'),75000,2,1,5),
 (nextval('orderline_id_seq'),60000,1,2,6),
 (nextval('orderline_id_seq'),80000,1,3,5);
 
