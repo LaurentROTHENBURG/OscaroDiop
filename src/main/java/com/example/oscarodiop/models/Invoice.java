@@ -19,4 +19,20 @@ public class Invoice {
 
     public Invoice() {
     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getFile() {
+        return file;
+    }
+
+    public LocalDate getEditionDate() {
+        return editionDate;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
 }
