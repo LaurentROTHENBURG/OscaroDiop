@@ -15,6 +15,7 @@ public class Order {
     private Long id;
     private LocalDate orderDate;
 
+    @JsonIgnore
     @ManyToOne
     private Customer customer;
 

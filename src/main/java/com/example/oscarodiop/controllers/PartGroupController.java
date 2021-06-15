@@ -28,13 +28,13 @@ public class PartGroupController {
     }
 
     @PostMapping
-    public Long createPartGroupe(@RequestParam PartGroup partGroup){
+    public Long createPartGroupe(@RequestBody PartGroup partGroup){
       return   partGroupRepository.save(partGroup).getId();
     }
 @Transactional
     @DeleteMapping("/{id}")
     public void deletePartGroupe(@PathVariable Long id){
-        partGroupRepository.deleteById(id.intValue());
+        partGroupRepository.deleteById(id);
     }
 
     @Transactional //pour que la methode modifie la base
