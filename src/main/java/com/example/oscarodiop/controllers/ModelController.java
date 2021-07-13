@@ -29,15 +29,16 @@ public class ModelController {
         return modelRepository.findAll();
     }
 
-    @GetMapping("/{id}")
-    public Model getModelById(@PathVariable Long id) {
-        Optional<Model> model = modelRepository.findById(id);
-
+    @GetMapping("/{brandId}")
+    public List<Model> getModelByBrandId(@PathVariable Long brandId) {
+         List<Model> model = modelRepository.findModelByBrandId(brandId);
+         return  model;
+/*
         if (model.isPresent()) {
             return model.get();
         } else {
             return null;
-        }
+        }*/
     }
 
     @PostMapping
