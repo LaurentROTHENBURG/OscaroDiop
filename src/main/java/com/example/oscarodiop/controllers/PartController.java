@@ -13,6 +13,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("admin/parts")
+
+@CrossOrigin("http://localhost:4200")
 public class PartController {
     @Autowired
     private PartRepository partRepository;
@@ -24,7 +26,7 @@ public class PartController {
     }
 
     @GetMapping(value = "/getPartsByModel/{idModel}")
-    public List<Part> getPartsByModel(@PathParam("idModel") Long idModel){
+    public List<Part> getPartsByModel(@PathVariable("idModel") Long idModel){
         return partRepository.findAllByModel_Id(idModel);
     }
 

@@ -11,6 +11,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("admin/parttype")
+@CrossOrigin("http://localhost:4200")
 
 public class PartTypeController {
 

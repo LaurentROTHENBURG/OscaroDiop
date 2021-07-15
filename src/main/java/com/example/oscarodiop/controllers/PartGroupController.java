@@ -14,6 +14,9 @@ import java.util.List;
 
 @RestController
 @RequestMapping("admin/partgroup")
+
+@CrossOrigin("http://localhost:4200")
+
 public class PartGroupController {
 
     private PartGroupRepository partGroupRepository;
