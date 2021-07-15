@@ -40,6 +40,10 @@ public class Model {
         return year;
     }
 
+    public Brand getBrand() {
+        return brand;
+    }
+
     public LocalDate getAddDate() {
         return addDate;
     }

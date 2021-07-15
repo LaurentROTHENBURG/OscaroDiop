@@ -32,13 +32,13 @@ public class ModelController {
     @GetMapping("/{brandId}")
     public List<Model> getModelByBrandId(@PathVariable Long brandId) {
          List<Model> model = modelRepository.findModelByBrandId(brandId);
-         return  model;
-/*
-        if (model.isPresent()) {
+        return  model;
+
+   /*     if (model.isPresent()) {
             return model.get();
         } else {
-            return null;
-        }*/
+            return null;*/
+
     }
 
     @PostMapping
