@@ -13,6 +13,7 @@ import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
+@CrossOrigin("http://localhost:4200")
 @RestController
 @RequestMapping("admin/models")
 
