@@ -1,5 +1,6 @@
 package com.example.oscarodiop.repositories;
 
+import com.example.oscarodiop.models.Brand;
 import com.example.oscarodiop.models.Model;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
@@ -16,5 +17,7 @@ public interface ModelRepository extends JpaRepository<Model, Long> {
     @Query ("update Model m set m.disable = true where m.id =:id ")
     int disableModel(@Param("id") Long id);
 
-    List<Model> findModelByBrandId(@PathVariable ("brandId") Long brandId);
+    List<Model> findModelByBrandIdOrderByNameAsc(@PathVariable ("brandId") Long brandId);
+
+
 }

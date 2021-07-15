@@ -32,7 +32,7 @@ public class ModelController {
 
     @GetMapping("/{brandId}")
     public List<Model> getModelByBrandId(@PathVariable Long brandId) {
-         List<Model> model = modelRepository.findModelByBrandId(brandId);
+         List<Model> model = modelRepository.findModelByBrandIdOrderByNameAsc(brandId);
         return  model;
 
    /*     if (model.isPresent()) {

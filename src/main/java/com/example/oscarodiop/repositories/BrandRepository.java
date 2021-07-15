@@ -8,6 +8,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Repository
 public interface BrandRepository extends JpaRepository<Brand, Long> {
@@ -17,5 +18,7 @@ public interface BrandRepository extends JpaRepository<Brand, Long> {
     @Query("update Brand b set b.disable = true where b.id =:id ")
 
     int disableBrand(@Param("id") Long id);
+
+    List<Brand> findAllByOrderByNameAsc();
 
 }//end

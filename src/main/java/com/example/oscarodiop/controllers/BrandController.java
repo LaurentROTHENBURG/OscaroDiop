@@ -27,7 +27,7 @@ public class BrandController {
 
     @GetMapping
     public List<Brand> getAllBrand() {
-        return brandRepository.findAll();
+        return brandRepository.findAllByOrderByNameAsc();
     }
 
     @GetMapping("/{id}")
