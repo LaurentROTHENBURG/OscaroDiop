@@ -26,27 +26,28 @@ public class PartGroupController {
     }
 
     @GetMapping
-    public List<PartGroup> getAllPartGroup(){
+    public List<PartGroup> getAllPartGroup() {
         return partGroupRepository.findAll();
     }
 
+
     @PostMapping
-    public Long createPartGroupe(@RequestBody PartGroup partGroup){
-      return   partGroupRepository.save(partGroup).getId();
+    public Long createPartGroupe(@RequestBody PartGroup partGroup) {
+        return partGroupRepository.save(partGroup).getId();
     }
-@Transactional
+
+    @Transactional
     @DeleteMapping("/{id}")
-    public void deletePartGroupe(@PathVariable Long id){
+    public void deletePartGroupe(@PathVariable Long id) {
         partGroupRepository.deleteById(id);
     }
 
     @Transactional //pour que la methode modifie la base
     @PutMapping("/{id}/value")
-    public ResponseEntity updatePartGroup(@PathVariable Long id, @RequestBody String value){
-        return new ResponseEntity((partGroupRepository.setValueById(value,id)!=0)
-    ? HttpStatus.OK : HttpStatus.NOT_FOUND);
+    public ResponseEntity updatePartGroup(@PathVariable Long id, @RequestBody String value) {
+        return new ResponseEntity((partGroupRepository.setValueById(value, id) != 0)
+                ? HttpStatus.OK : HttpStatus.NOT_FOUND);
     }
-
 
 
 }

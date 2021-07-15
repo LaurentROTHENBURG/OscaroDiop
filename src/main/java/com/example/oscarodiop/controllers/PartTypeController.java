@@ -27,15 +27,11 @@ public class PartTypeController {
         return partTypeRepository.findAll();
     }
 
-    @GetMapping("/{id}")
-    public PartType getPartTypeById(@PathVariable Long id) {
-        Optional<PartType> partType = partTypeRepository.findById(id);
+    @GetMapping("/{groupId}")
+    public List<PartType> getPartTypeByGroupId(@PathVariable Long groupId) {
+        List<PartType> partType = partTypeRepository.findByPartGroupId(groupId);
 
-        if (partType.isPresent()) {
-            return partType.get();
-        } else {
-            return null;
-        }
+        return partType;
     }
 
     @PostMapping
