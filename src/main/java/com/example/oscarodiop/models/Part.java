@@ -17,7 +17,7 @@ public class Part {
     @ManyToOne
     private PartType partType;
 
-
+    @JsonIgnore
     @OneToOne
     private Model model;
 

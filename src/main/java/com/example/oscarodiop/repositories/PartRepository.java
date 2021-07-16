@@ -18,7 +18,10 @@ public interface PartRepository extends JpaRepository<Part, Long> {
 
     List<Part> findAllByModel_Id(@Param("id") Long idBrand);
 
-    List<Part> findAllByModel_IdAndPartType(@Param("id") Long idBrand, @Param("idPartType") Long idPartType);
+    List<Part> findAllByModelIdAndPartTypeId(@Param("id") Long idBrand, @Param("idPartType") Long idPartType);
+
+    //List<Part> findAllByModelAndPartType(@Param("id") Long idBrand, @Param("idPartType") Long idPartType);
+
 
     @Query(value = "select p.*, pg.name, pt.name, m.name, b.name from part p\n" +
             "inner join model m on m.id = p.model_id\n" +

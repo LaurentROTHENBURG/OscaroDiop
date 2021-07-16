@@ -14,7 +14,7 @@ public class PartType {
 
     String name;
 
-
+    @JsonIgnore
     @ManyToOne
     private PartGroup partGroup;
 
