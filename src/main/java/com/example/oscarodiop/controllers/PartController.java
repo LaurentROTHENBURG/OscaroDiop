@@ -8,8 +8,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
-import javax.websocket.server.PathParam;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("admin/parts")
@@ -40,9 +40,9 @@ public class PartController {
         return partRepository.findAllByModel_IdAndPartTypeAndPartGroup(idModel, idPartType,idPartGroup );
     }
 
-    @GetMapping(value = "/{id}")
-    public Part getPart(@PathVariable ("id") Long id){
-        return partRepository.getById(id);
+    @GetMapping("/{id}")
+    public Optional<Part> getPart(@PathVariable Long id){
+        return partRepository.findById(id);
     }
 
     @PostMapping
