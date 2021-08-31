@@ -54,8 +54,10 @@ public class BrandController {
 
     @Transactional
     @PutMapping(value = "/disable/{id}")
-    public ResponseEntity disableBrand(@PathVariable("id") Long id){
-        return new ResponseEntity((brandRepository.disableBrand(id)) !=0 ? HttpStatus.OK : HttpStatus.NOT_FOUND);
+    public Brand disableBrand(@PathVariable("id") Long id, @RequestBody Brand brand){
+        //return new ResponseEntity((brandRepository.save(brand)) !=null ? HttpStatus.OK : HttpStatus.NOT_FOUND);
+        return brandRepository.save(brand);
+        //return new ResponseEntity((brandRepository.disableBrand(id)) !=0 ? HttpStatus.OK : HttpStatus.NOT_FOUND);
     }
 
 
