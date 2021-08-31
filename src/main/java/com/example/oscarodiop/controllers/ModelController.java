@@ -30,17 +30,23 @@ public class ModelController {
         return modelRepository.findAll();
     }
 
+
+    @GetMapping("/nbModelByBrand")
+    public Object getNumberModelByBrand(){
+        return modelRepository.countModel();
+    }
+
+
     @GetMapping("/{brandId}")
     public List<Model> getModelByBrandId(@PathVariable Long brandId) {
-         List<Model> model = modelRepository.findModelByBrandIdOrderByNameAsc(brandId);
-        return  model;
-
-   /*     if (model.isPresent()) {
-            return model.get();
-        } else {
-            return null;*/
-
+        List<Model> model = modelRepository.findModelByBrandIdOrderByNameAsc(brandId);
+        return model;
     }
+
+        @GetMapping("/alertstock")
+        public List<Object> getStockNull() {
+           return  modelRepository.alertStock();
+      }
 
     @PostMapping
     public Long createModel(@RequestBody Model modelToCreate) {

@@ -110,7 +110,9 @@ insert into part (id, add_date,description, minimum_price,public_price,reference
                                                      (nextval('part_id_seq'),now(),'MOTEUR + TRANSMISSION',800000,1000000,'','478T867ES',2,10,11,false),
                                                      (nextval('part_id_seq'),now(),'PORTE AVANT FOCUS 2012',60000,80000,'','677T867ES',8,7,52,false),
                                                      (nextval('part_id_seq'),now(),'BRAS FORD FOCUS',60000,85000,'','477T867ESLa',1,7,30,false)  ,
-                                                     (nextval('part_id_seq'),now(),'COMPRESSEUR',80000,90000,'','',1,12,33,false) ;
+                                                     (nextval('part_id_seq'),now(),'COMPRESSEUR',80000,90000,'','',1,12,33,false),
+                                                     (nextval('part_id_seq'),now(),'feux arriere Droit',50000,550000,'','',0,12,33,true),
+                                                     (nextval('part_id_seq'),now(),'feux arriere Gauche',50000,550000,'','',0,12,33,false);
 
 insert into part (id, add_date,description, minimum_price,public_price,reference,serial_number,stock,model_id,part_type_id) values
 (nextval('part_id_seq'),now(),'feux Avant II',50000,55000,'je ne sais pas','377T866ES',5,1,1),

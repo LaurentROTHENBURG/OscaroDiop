@@ -58,4 +58,9 @@ public class BrandController {
         return new ResponseEntity((brandRepository.disableBrand(id)) !=0 ? HttpStatus.OK : HttpStatus.NOT_FOUND);
     }
 
+
+    @GetMapping("/nbBrand")
+    public int getANumberBrand() {
+        return brandRepository.countBrandsBy();
+    }
 }//end

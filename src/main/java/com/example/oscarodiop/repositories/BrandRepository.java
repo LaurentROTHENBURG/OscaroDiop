@@ -21,4 +21,6 @@ public interface BrandRepository extends JpaRepository<Brand, Long> {
 
     List<Brand> findAllByOrderByNameAsc();
 
+    int countBrandsBy();
+
 }//end
