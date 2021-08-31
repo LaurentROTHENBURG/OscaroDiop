@@ -20,7 +20,10 @@ public interface PartRepository extends JpaRepository<Part, Long> {
 
     List<Part> findAllByModelIdAndPartTypeId(@Param("id") Long idBrand, @Param("idPartType") Long idPartType);
 
-    //List<Part> findAllByModelAndPartType(@Param("id") Long idBrand, @Param("idPartType") Long idPartType);
+    @Query(value = "select *\n" +
+            "from part join part_type pt on part.part_type_id = pt.id\n" +
+            "where model_id=:idModel and pt.part_group_id=:idPartGroup", nativeQuery = true)
+    List<Part> findAllByModelIdAndPartGroup(@Param("idModel") Long idModel, @Param("idPartGroup") Long idPartGroup);
 
 
     @Query(value = "select p.*, pg.name, pt.name, m.name, b.name from part p\n" +

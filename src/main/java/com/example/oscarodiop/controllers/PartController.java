@@ -34,6 +34,10 @@ public class PartController {
     public List<Part> getPartsByModelByPartType(@PathVariable("idModel") Long idModel, @PathVariable("idPartType") Long idPartType){
         return partRepository.findAllByModelIdAndPartTypeId(idModel, idPartType);
     }
+    @GetMapping(value = "/getPartsByModelByPartGroup/{idModel}/{idPartGroup}")
+    public List<Part> getPartsByModelByPartGroupe(@PathVariable("idModel") Long idModel, @PathVariable("idPartGroup") Long idPartGroup){
+        return partRepository.findAllByModelIdAndPartGroup(idModel, idPartGroup);
+    }
 
     @GetMapping(value = "/getPartsByModelByPartTypeByPartGroup/{idModel}/{idPartType}/{idPartGroup}")
     public List<Part> getPartsByModelByPartTypeAndPartGroup(@PathVariable("idModel") Long idModel, @PathVariable("idPartType") Long idPartType, @PathVariable("idPartGroup") Long idPartGroup){
