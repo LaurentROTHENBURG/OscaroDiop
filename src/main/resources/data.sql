@@ -105,8 +105,8 @@ insert into model (id, add_date, disable,name,year,brand_id) VALUES (nextval('mo
                                                                     (nextval('model_id_seq'), now(), false,'Leon',2015,2);
 
 insert into part (id, add_date,description, minimum_price,public_price,reference,serial_number,stock,model_id,part_type_id,disable) values
-                                                     (nextval('part_id_seq'),now(),'feux Avant',50000,55000,'je ne sais pas','377T866ES',5,1,1,false),
-                                                     (nextval('part_id_seq'),now(),'alternateurpartie',70000,75000,'je ne sais pas','278T866ES',3,2,2,false),
+                                                     (nextval('part_id_seq'),now(),'feux Avant',50000,55000,'XYZ2K6MNU','377T866ES',5,1,1,false),
+                                                     (nextval('part_id_seq'),now(),'alternateurpartie',70000,75000,'XY5OMI9ZU','278T866ES',3,2,2,false),
                                                      (nextval('part_id_seq'),now(),'MOTEUR + TRANSMISSION',800000,1000000,'','478T867ES',2,10,11,false),
                                                      (nextval('part_id_seq'),now(),'PORTE AVANT FOCUS 2012',60000,80000,'','677T867ES',8,7,52,false),
                                                      (nextval('part_id_seq'),now(),'BRAS FORD FOCUS',60000,85000,'','477T867ESLa',1,7,30,false)  ,
@@ -115,8 +115,8 @@ insert into part (id, add_date,description, minimum_price,public_price,reference
                                                      (nextval('part_id_seq'),now(),'feux arriere Gauche',50000,550000,'','',0,12,33,false);
 
 insert into part (id, add_date,description, minimum_price,public_price,reference,serial_number,stock,model_id,part_type_id) values
-(nextval('part_id_seq'),now(),'feux Avant II',50000,55000,'je ne sais pas','377T866ES',5,1,1),
-(nextval('part_id_seq'),now(),'alternateurpartie II',70000,75000,'je ne sais pas','278T866ES',3,2,2),
+(nextval('part_id_seq'),now(),'feux Avant II',50000,55000,'YXZ2K6ANO','377T866ES',5,1,1),
+(nextval('part_id_seq'),now(),'alternateurpartie II',70000,75000,'XYZ5T6MOP','278T866ES',3,2,2),
 (nextval('part_id_seq'),now(),'MOTEUR + TRANSMISSION II',800000,1000000,'','478T867ES',2,10,11),
 (nextval('part_id_seq'),now(),'PORTE AVANT FOCUS 2012 II',60000,80000,'','677T867ES',8,7,52),
 (nextval('part_id_seq'),now(),'BRAS FORD FOCUS II',60000,85000,'','477T867ESLa',1,7,30)  ,
